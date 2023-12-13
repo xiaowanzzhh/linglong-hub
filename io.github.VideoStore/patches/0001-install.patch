@@ -1,0 +1,48 @@
+From 080fb686b91a5350f5e2e3fd9b8304a2cd23456d Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 12 Dec 2023 16:12:24 +0800
+Subject: [PATCH] install
+
+---
+ app/VideoStore.desktop | 8 ++++++++
+ app/app.pro            | 9 ++++++++-
+ 2 files changed, 16 insertions(+), 1 deletion(-)
+ create mode 100644 app/VideoStore.desktop
+
+diff --git a/app/VideoStore.desktop b/app/VideoStore.desktop
+new file mode 100644
+index 0000000..2af3869
+--- /dev/null
++++ b/app/VideoStore.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=VideoStore
++Name=VideoStore
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/app/app.pro b/app/app.pro
+index 493bef2..64a134d 100644
+--- a/app/app.pro
++++ b/app/app.pro
+@@ -47,5 +47,12 @@ CONFIG += embed_translations
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =VideoStore.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+

@@ -1,0 +1,21 @@
+package:
+  id: io.github.VideoStore
+  name: VideoStore
+  version: 0.1.0
+  kind: app
+  description: |
+   A GUI program with SQLite database.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/Babkock/VideoStore.git"
+  commit: 84d7789afdd0d4a6cbb41859b12a1d7ba8833254
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  
