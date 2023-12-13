@@ -1,0 +1,49 @@
+From eefca0eb643d5a271099b0010e8bd1b178aacc9a Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 12 Dec 2023 15:49:09 +0800
+Subject: [PATCH] install
+
+---
+ src/logan.desktop |  9 +++++++++
+ src/logan.pro     | 10 ++++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 src/logan.desktop
+
+diff --git a/src/logan.desktop b/src/logan.desktop
+new file mode 100644
+index 0000000..eea5e1b
+--- /dev/null
++++ b/src/logan.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=logan
++Name=logan
++Icon=logan
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/src/logan.pro b/src/logan.pro
+index ea10fc0..2b5b2f9 100644
+--- a/src/logan.pro
++++ b/src/logan.pro
+@@ -71,3 +71,13 @@ FORMS += \
+ 
+ RESOURCES += \
+     resources.qrc
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =logan.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = icons/logan.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+

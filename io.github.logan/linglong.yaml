@@ -1,0 +1,21 @@
+package:
+  id: io.github.logan
+  name: logan
+  version: 4.0.0
+  kind: app
+  description: |
+   Log files analiser.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/lysevi/logan.git"
+  commit: bc5aca976d20dc86311f12d574bba7a9240cfd9e
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  
